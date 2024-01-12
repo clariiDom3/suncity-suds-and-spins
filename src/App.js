@@ -24,11 +24,4 @@ function App() {
         </a>
       </header>
       <div>
-        <Footer />
-      </div>
-      
-    </div>
-  );
-}
-
-export default App;
+ 
