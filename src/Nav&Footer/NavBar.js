@@ -1,10 +1,20 @@
 import React from 'react'
+import DropDown from './DropDown';
 
-export default function NavBar() {
-  return (
-    <div className='Nav'>
-        <text>hello</text>
-      
-    </div>
-  )
-}
+const services = [
+    {
+    id: 0,
+    name: "option 1"
+    },
+    {
+        id: 1,
+        name: "Dry cleaning"
+    },
+    {
+        id: 2,
+        name: "Wash and hold"
+    },
+];
+const pricing = [
+    {
+       
