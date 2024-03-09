@@ -10,6 +10,12 @@
     
   }
   
+
+  .custom-color-light-blue {
+    color: #87ceeb; /* Or any other color */
+  }
+
+
   .Nav {
     height: 40px;
     display: flex;
@@ -24,41 +30,34 @@
     border: none;
     border-radius: 8px;
     padding: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-
-  }
-
-.dropDown{
-    background-color: #87ceeb;
-    width: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 1.2in;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin-right: 8px;
-    border: none;
-    border-radius: 8px;
-    padding: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    
 
+  }
+
+  .navButton > div {
+    display: flex;
+    align-items: center;
 }
 
-.dropDownTitle{
-    margin-right: 2px;
-
+.navButton > div:last-child {
+    margin-left: auto;
 }
-
-.dropDownOpen{
-    margin-left: 2px;
-}
-
-.dropDownSpace{
-    width: 1in;
-}
+ 
   
-  .dropDown ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  .navButton ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    list-style: none;
   }
   
   .footer-container{

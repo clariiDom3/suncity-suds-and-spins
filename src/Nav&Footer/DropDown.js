@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import Button from 'react-bootstrap/Button'
 
 export default function DropDown({title, items= [], multiSelect = false}) {
     const[open, setOpen] = useState(false);
@@ -10,16 +11,17 @@ export default function DropDown({title, items= [], multiSelect = false}) {
     }
 
   return (
-    <div className='dropDownSpace'>
-      <div className='dropDown' tabIndex = {0} role="button" onKeyPress={() => toggle(!open)} onClick={() => toggle(!open)}>
-        <div className='dropDownTitle'>{title}</div>
-        <div className='dropDownOpen'>{open ? '↓' : '↑'}</div>
+    <div className='navButton'>
+      <div tabIndex = {0} role="button" onKeyPress={() => toggle(!open)} onClick={() => toggle(!open)}>
+        <div>{title}     </div>
+        <div>{open ? '>' : '<'}</div>
+        
         {open && (
             <ul>{items.map(item => (
                 <li key = {item.id}>
-                    <button className='navButton' onClick={() => handleOnClick(item)}>
+                    <Button className='navButton' onClick={() => handleOnClick(item)}>
                         <span>{item.name}</span>
-                    </button>
+                    </Button>
                 </li>
             ))}</ul>
         )}
