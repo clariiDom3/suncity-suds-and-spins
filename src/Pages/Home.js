@@ -3,8 +3,7 @@ import React from 'react'
 export default function Home() {
   return (
     <div className='App-header'>
-        <text>CLEAN CLOTHES, MADE EASY</text>
-      
+      <header>Clean clothes</header>
     </div>
   )
 }

@@ -1,5 +1,11 @@
 import React from 'react'
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import {BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import Home from '../Pages/Home.js';
+import About from '../Pages/WashAndFold.js';
+import Careers from '../Pages/Careers.js';
+
+
 
 
 const services = [
@@ -36,40 +42,48 @@ const pricing = [
 ]
 
 let NavigationBar = () => {
-
-    function handleClicked(){
-
-    }
-
-
     return (
-    
-        <Navbar expand="lg" className="bg-body-tertiary">
-            <Container>
+        <Router>
+
+            <Navbar expand="lg" className="bg-body-tertiary">
+
                 <Navbar.Brand href="#home">Suncity Suds & Spins</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link style={{ color: '#87ceeb' }} href="#home">Home</Nav.Link>
-                        <NavDropdown title="Services" id="service-nav-dropdown">
-                            {services.map(service => (
-                                <NavDropdown.Item key={service.id} href={'#${service.id}'}>{service.name}</NavDropdown.Item>
+                        <Nav.Link as={Link} to={"/"} style={{ color: '#87ceeb' }}>Home</Nav.Link>
+                        <NavDropdown title="Services" id="service-nav-dropdown" className='.custom-color-light-blue'>
+
+                            {services.map((service, index) => (
+                                <React.Fragment key={service.id}>
+                                    <NavDropdown.Item href={'#${service.id}'}>{service.name}</NavDropdown.Item>
+                                    {index < services.length - 1 && <NavDropdown.Divider />}
+                                </React.Fragment>
                             ))}
-                            
                         </NavDropdown>
                         <NavDropdown title="Prices" id="price-nav-dropdown">
-                            {pricing.map(price => (
-                                <NavDropdown.Item key={price.id} href={'#${price.id}'}>{price.name}</NavDropdown.Item>
-                                
+                            {pricing.map((price, index) => (
+                                <React.Fragment key={price.id}>
+                                    <NavDropdown.Item href={'#${price.id}'}>{price.name}</NavDropdown.Item>
+                                    {index < pricing.length - 1 && <NavDropdown.Divider />}
+                                </React.Fragment>
                             ))}
-                            
                         </NavDropdown>
-                        <Nav.Link style={{ color: '#87ceeb' }} href="#link">About us</Nav.Link>
-                        <Nav.Link style={{ color: '#87ceeb' }}  href="#link">Careers</Nav.Link>
+                        <Nav.Link as={Link} to={"/about"} style={{ color: '#87ceeb' }}>About us</Nav.Link>
+                        <Nav.Link as={Link} to={"/careers"} style={{ color: '#87ceeb' }}>Careers</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
-            </Container>
-        </Navbar>
+
+            </Navbar>
+            <>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/careers" element={<Careers />} />   
+            </Routes>
+           </> 
+        </Router>
+        
   )
 };
 export default NavigationBar;
