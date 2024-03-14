@@ -65,16 +65,38 @@
   
   .App-header {
     background-color: #87ceeb;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    min-height: 100vh;  
     align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
+    margin-top: 30px;
+    text-align: center;
   }
   
-  .App-link {
-    color: #87ceeb;
+  .bg-blue-color {
+    background-color: #87ceeb;
   }
+  .welcome-section {
+    padding: 100px 0;
+    background-color: #f8f9fa;
+}
+
+.welcome-section h2 {
+    color: #333;
+}
+
+.hero-banner {
+  background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.com%2FWelcome-Banner-Burlap-Classroom-Decorations%2Fdp%2FB07F9MT3Q1&psig=AOvVaw371GHZx6SRH-Q3tPFP_4dT&ust=1710408311183000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCNDBntD18IQDFQAAAAAdAAAAABAE');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text {
+  text-align: center;
+  color: #fff;
+}
   
   

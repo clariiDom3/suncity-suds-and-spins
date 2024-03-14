@@ -1,11 +1,9 @@
 import React from 'react'
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
-import {BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import Home from '../Pages/Home.js';
 import About from '../Pages/WashAndFold.js';
 import Careers from '../Pages/Careers.js';
-
-
 
 
 const services = [
@@ -22,6 +20,7 @@ const services = [
         name: "Wash and hold"
     },
 ];
+
 const pricing = [
     {
         id: 0,
@@ -39,21 +38,20 @@ const pricing = [
         id: 3,
         name: "Dry Cleaning Prices"
     },
-]
+];
 
 let NavigationBar = () => {
     return (
         <Router>
-
-            <Navbar expand="lg" className="bg-body-tertiary">
-
+            <Navbar expand="lg" className="bg-body-tertiary fixed-top shadow-sm">
+                <Container>
                 <Navbar.Brand href="#home">Suncity Suds & Spins</Navbar.Brand>
+                
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link as={Link} to={"/"} style={{ color: '#87ceeb' }}>Home</Nav.Link>
                         <NavDropdown title="Services" id="service-nav-dropdown" className='.custom-color-light-blue'>
-
                             {services.map((service, index) => (
                                 <React.Fragment key={service.id}>
                                     <NavDropdown.Item href={'#${service.id}'}>{service.name}</NavDropdown.Item>
@@ -73,7 +71,7 @@ let NavigationBar = () => {
                         <Nav.Link as={Link} to={"/careers"} style={{ color: '#87ceeb' }}>Careers</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
-
+              </Container>  
             </Navbar>
             <>
             <Routes>
