@@ -43,14 +43,14 @@ const pricing = [
 let NavigationBar = () => {
     return (
         <Router>
-            <Navbar expand="lg" className="bg-body-tertiary fixed-top shadow-sm">
+            <Navbar expand="lg" className="navbar-light fixed-top shadow-sm">
                 <Container>
                 <Navbar.Brand href="#home">Suncity Suds & Spins</Navbar.Brand>
                 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link as={Link} to={"/"} style={{ color: '#87ceeb' }}>Home</Nav.Link>
+                        <Nav.Link as={Link} to={"/"}>Home</Nav.Link>
                         <NavDropdown title="Services" id="service-nav-dropdown" className='.custom-color-light-blue'>
                             {services.map((service, index) => (
                                 <React.Fragment key={service.id}>
@@ -67,8 +67,8 @@ let NavigationBar = () => {
                                 </React.Fragment>
                             ))}
                         </NavDropdown>
-                        <Nav.Link as={Link} to={"/about"} style={{ color: '#87ceeb' }}>About us</Nav.Link>
-                        <Nav.Link as={Link} to={"/careers"} style={{ color: '#87ceeb' }}>Careers</Nav.Link>
+                        <Nav.Link as={Link} to={"/about"}>About us</Nav.Link>
+                        <Nav.Link as={Link} to={"/careers"}>Careers</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
               </Container>  
